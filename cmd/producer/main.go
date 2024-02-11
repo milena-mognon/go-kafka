@@ -9,7 +9,7 @@ import (
 func main() {
 	deliveryChan := make(chan kafka.Event)
 	producer := NewKafkaProducer()
-	Publish("tranferiu", "teste", producer, []byte("tranferencia"), deliveryChan)
+	Publish("tranferiu", "teste", producer, []byte("tranferencia1"), deliveryChan)
 
 	// joga isso em outra thread para o terminal não ficar travado quando rodar a aplicação
 	go DeliveryReport(deliveryChan) // deixa a execução assíncrona
